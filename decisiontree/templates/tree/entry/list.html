@@ -1,6 +1,6 @@
 {% extends "tree/base.html" %}
 {% load tree_tags %}
-
+{% load url from future %}
 {% block title %}Decision Trees{% endblock %}
 
 {% block stylesheets %}
@@ -32,7 +32,7 @@
             <td>{{ entry.transition.current_state.question.text }}</td>
             <td>{{ entry.transition.answer }}</td>
             <td>
-                <a href='{% url update-entry entry.pk %}' title='Edit tags'>
+                <a href='{% url "update-entry" entry.pk %}' title='Edit tags'>
                     {% for tag in entry.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
                 </a>
             </td>

@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # vim: ai ts=4 sts=4 et sw=4
-from django.conf.urls.defaults import patterns, url
+try: 
+    from django.conf.urls import url, patterns
+except ImportError: 
+    # for Django version less then 1.4
+    from django.conf.urls.defaults import url, patterns
 
 from decisiontree import views
 

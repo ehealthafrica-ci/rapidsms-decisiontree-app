@@ -2,6 +2,7 @@
 
 {% block content %}
 {% load i18n %}
+{% load url from future %}
 <form action="" method="POST" class="pretty"> {% csrf_token %}
 <fieldset> 
 <legend>
@@ -18,7 +19,7 @@
 
 <p class="buttons"> 
 <button type="submit" class="button positive icon tick">{% trans "Save" %}</button>
-<a class="button negative icon cross" href="{% url list-surveys %}">{% trans "Cancel" %}</a>
+<a class="button negative icon cross" href="{% url 'list-surveys' %}">{% trans "Cancel" %}</a>
 </p> 
 </fieldset> 
 
